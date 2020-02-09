@@ -7,10 +7,8 @@ class PhotoGallery extends StatefulWidget {
   _PhotoGalleryState createState() => _PhotoGalleryState();
 }
 
-class _PhotoGalleryState extends State<PhotoGallery>
-    with SingleTickerProviderStateMixin {
+class _PhotoGalleryState extends State<PhotoGallery> {
   var refreshKey = GlobalKey<RefreshIndicatorState>();
-  AnimationController controller;
 
   Future<Null> handleRefresh() async {
     refreshKey.currentState?.show();
@@ -25,16 +23,6 @@ class _PhotoGalleryState extends State<PhotoGallery>
     super.initState();
     print('inti state');
     bloc.fetchAllPhotos();
-//    Future.delayed(Duration(milliseconds: 200)).then((_) {
-//      refreshKey.currentState?.show();
-//    });
-//    controller = AnimationController(
-//        duration: Duration(seconds: 2), vsync: this, upperBound: 1);
-//    controller.forward();
-//    controller.addListener(() {
-//      setState(() {});
-//      print(controller.value);
-//    });
   }
 
   @override
