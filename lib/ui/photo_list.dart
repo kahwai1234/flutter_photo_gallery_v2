@@ -69,20 +69,18 @@ class _PhotoGalleryState extends State<PhotoGallery> {
             print('longPress');
           },
           child: SafeArea(
-              child: Card(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0)),
-                margin: EdgeInsets.only(top: 8, right: 8, left: 8),
-                elevation: 3.0,
-                child :Column(
-                  children: <Widget>[
-                    AspectRatio(
-                      aspectRatio: snapshot.data.results[i].width /
-                          snapshot.data.results[i].height,
-                      child: Image.network(snapshot.data.results[i].download_url),
-                    ),
-                  ],
-                ),
+            child: Card(
+              margin: EdgeInsets.only(top: 8, right: 8, left: 8),
+              elevation: 3.0,
+              child: Column(
+                children: <Widget>[
+                  AspectRatio(
+                    aspectRatio: snapshot.data.results[i].width /
+                        snapshot.data.results[i].height,
+                    child: Image.network(snapshot.data.results[i].download_url),
+                  ),
+                ],
+              ),
             ),
           ),
         ),
