@@ -7,4 +7,6 @@ class Repository {
 
   Future<ItemModel> fetchAllPhotos() => photoApiCall.fetchPhotoList();
 
+  //add something
+
 }
