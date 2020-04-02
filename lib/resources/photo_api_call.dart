@@ -15,7 +15,7 @@ class PhotoApiProvider {
     if (response.statusCode == 200) {
       print('200');
       print(response.body);
-      // If the call to the server was successful, parse the JSON
+      // If the call to the  server was successful, parse the JSON
       return ItemModel.fromJson(json.decode(response.body));
     } else {
       throw Exception('Failed to load post');

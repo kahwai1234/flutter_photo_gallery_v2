@@ -7,8 +7,9 @@ class PhotoGallery extends StatefulWidget {
   _PhotoGalleryState createState() => _PhotoGalleryState();
 }
 
-class _PhotoGalleryState extends State<PhotoGallery> {
+class _PhotoGalleryState extends State<PhotoGallery> with AutomaticKeepAliveClientMixin {
   var refreshKey = GlobalKey<RefreshIndicatorState>();
+
 
   Future<Null> handleRefresh() async {
     refreshKey.currentState?.show();
@@ -34,7 +35,12 @@ class _PhotoGalleryState extends State<PhotoGallery> {
   }
 
   @override
+  // TODO: implement wantKeepAlive
+  bool get wantKeepAlive => true;
+
+  @override
   Widget build(BuildContext context) {
+    super.build(context);
     return Scaffold(
       backgroundColor: Colors.teal[100],
       appBar: AppBar(

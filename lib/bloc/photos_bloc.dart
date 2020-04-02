@@ -6,7 +6,7 @@ class PhotosBloc {
   final _repository = Repository();
   final _photosFetcher = PublishSubject<ItemModel>();
 
-  Observable<ItemModel> get allPhotos => _photosFetcher.stream;
+  Observable<ItemModel> get allPhotos => _photosFetcher.stream; //streamcontroller
 
   Future<Null> fetchAllPhotos() async {
     ItemModel itemModel = await _repository.fetchAllPhotos();
